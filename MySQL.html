@@ -18,14 +18,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>                        
                 </button>
-                <a class="navbar-brand" href="#">Mr_Chen</a>
+                <a class="navbar-brand" href="#" id="index">Mr_Chen</a>
             </div>
             <nav class="main-menu">
                 <ul>
-                    <li><a href="#home">MySQL</a></li>
-                    <li><a href="#services">JavaScript</a></li>
-                    <li><a href="#clients">PHP</a></li>
-                    <li><a href="#contact">Git</a></li>
+                    <li><a href="#home" id="MySQL">MySQL</a></li>
+                    <li><a href="#services" id="JavaScript">JavaScript</a></li>
+                    <li><a href="#clients" id="PHP">PHP</a></li>
+                    <li><a href="#contact" id="Git">Git</a></li>
                 </ul>
             </nav>
         </div>
@@ -35,7 +35,132 @@
         <section class="col-md-12 content" id="home">
            <div class="col-lg-12 col-md-12 content-item content-item-1 background">
                <h2 class="main-title text-center dark-blue-text">MySQL</h2>
-               <p>MySQL-Front is a Windows front end for the MySQL database server. The database structure and data can be handled via dialogs or SQL commands. Import and Export in standard file formats is supported. The MySQL server can be connected directly or via HTTP tunneling.。</p>               
+
+               <p>大数据存储：<br>当MySQL中一个表的总记录数超过了1000万行，会出现性能的大幅度下降。但性能下降的比率由系统的结构、应用程序、数据库索引、服务器硬件等多种因素而定。数据库多达上亿的数据量，分表之后的单个表也已经突破千万，那么单个表的更新等均影响系统的运行效率。<br>解决方案:1、大表拆小表;   2、SQL语句的优化：可以通过增加索引等来调整，但是数据量的增加将会导致索引的维护，代价增大</p>
+               <p>SQL语句如何优化:<br>1. 合理使用索引，避免使用不到的索引，不要给类型比较大的字段添加索引;<br>2. 不要使用子查询，可以使用join替换子查询,left join;<br>3. 不要使用*号，只查需要的字段。<br>4. limit分页优化,多使用limit；<br>5. 可以使用冗余来减少关联表查询。以空间换时间。<br>6、尽量不要在数据库中做运算;<br>7. 减少使用MySQL内置函数;<br>8. 最先出现的条件，一定是过滤和排除掉更多结果的条件，第二出现的次
+之.例如：    1、select * from user where name = 'jack' and  sex = '1'//应该选择这个  2、select * from user where  sex = '1' and   name = 'jack'<br>左连接的语法：select name,pwd,address from user left join user_detail on  user.id = user_detail.uid;<br>9、索引一定要使用到<br>
+          9.1.   or  左右两边的字段有应该有索引 <br>
+          9.2.   like   "%amin"这种用不到索引 <br>
+          9.3.   name = 123  //用不到索引<br>
+          9.4.   字段使用函数，将不能用到索引<br>
+          10、防SQL注入原理：先发送的模板，模板已经翻译。不会破坏SQL语句结构详细情况请点击<a href="http://stackoverflow.com/" target="_blank">http://stackoverflow.com/</a></p>
+               <p>表设计： > 表设计:1. 符合数据库设计三范式。范式：数据库设计的规则 数据减少冗余(重复);<br>
+               						2. 字段类型选择 报小不报大。特殊：ip地址、手机号码、用户状态（使用tinyint而不是使用枚举）<br>
+
+    								3. 合理添加索引<br>
+
+        							4. 尽量给每个字段添加not null</p>  
+        		<p>MySQL的命令：<br>--连接（登陆mysql服务器）
+			mysql –h 服务器主机地址 –u 用户名 –p 用户密码;<br>--查看索引数据库：show databases;<br>-- 删除库drop database `库名`;<br>-- 选库use user;<br>-- 查看所有表show tables;<br>-- 查看表结构desc user;<br> -- 查看建表语句show create table `user`;<br>-- 查看test1表所有字段select * from test1;<br>-- 删除表drop table `表名`;<br><br>一个表的增删改查: <br>1.	使用INSERT语句向数据表中添加数据
+			格式：
+			INSERT INTO 表名 [(字段名1,字段名2,…字段名n)] VALUES(‘值1’,‘值2’,…,’值n’);
+			或者
+			INSERT INTO 表名 [(字段名1,字段名2,…字段名n)] VALUES(‘值1’,‘值2’，…，‘值n’),VALUES(‘值1’,‘值2’,…,’值n’);<br>
+			
+		2.	使用UPDATE语句更新数据表中已存在的数据
+			格式：
+			UPDATE 表名 SET 字段名=表达式 [,…][WHERE 条件]
+			[ORDER BY 字段][LIMIT 行数] <br>
+
+		3.	使用DELETE语句删除数据表中不需要的数据记录
+			格式：
+			DELETE FROM 表名 [WHERE 条件][ORDER BY 字段][LIMIT 行数]<br>
+		4、通过SQL命令查询数据表中的数据<br>
+		1. 格式
+			SELECT [ALL|DISTINCT]{*|table.*|[table.]field1[AS alias1][,[table.]field2[AS alias2][,…]]}FROM 表名
+			 [WHERE子句]
+			[GROUP BY..][HAVING..][ORDER BY..][LIMIT count];<br>
+			2. 选择特定的字段
+			
+			1、使用AS子句为字段取别名
+			2、DISTINCT关键字的使用
+			3、在SELECT语句中使用表达式的列
+			4、使用WHERE子句按条件检索
+			5、根据空值（NULL）确定检索条件
+			6、使用BEETWEEN AND进行范围比较查询
+			7、使用IN进行范围比对查询
+			8、使用LIKE进行模糊查询
+			9、多表查询（连接查询）
+			10、嵌套查询（子查询）
+			11、使用ORDER BY对查询结果排序
+			12、使用LIMIT
+			<br>
+
+			<br>--创建表基本格式
+			create table if not exists `test1`(
+				`column1` tinyint unsigned,
+				`column2` tinyint 
+			)engine=InnoDB default charset=utf8;<br>--插入数据:插入的字段有 column1,column2 值是 188,127;
+			insert into `test1`(column1,column2) values(188,127);<br>-- 添加字段
+			alter table `test1` add `column3` smallint unsigned;<br>-- 修改表名
+			alter table `user` rename to `newuser`;<br>-- 修改字段的数据类型
+			alter table `user` modify `grade` varchar(255) not null default 'g14';<br>-- 修改字段名 (注意，类型和完整性约束也要修改)
+			alter table `user` change `grade` `newgrade` varchar(100) default 'g14s';<br>-- 删除字段
+			alter table `user` drop `addtime3`;<br>-- 设置表字符集(引擎也一样修改的格式)
+			alter table `表名` DEFAULT CHARSET=gbk;<br></p>  
+
+			<p>索引的简介和使用：<br>
+				1 索引简介<br>
+					1.1 在MySQL中，主要有四类索引：
+						主键索引（PRIMARY KEY）
+						唯一索引（UNIQUE）
+						常规索引（INDEX）
+						全文索引（FULLTEXT）
+						外键（foreign key）<br>
+
+					1.2 主键索引
+						主键索引是关系数据库中最常见的索引类型，主要作用是确定数据表里一条特定的数据记录的位置。
+						我们可以在字段后添加PRIMARY KEY来对字段设置为主键索引。
+						注意：
+							1.最好为每张表指定一个主键，但不是必须指定。
+							2.一个表只能指定一个主键，而且主键的值不能为空
+							3.主键可以有多个候选索引（例如NOT NULL，AUTO_INCREMENT）<br>
+
+					1.3 唯一索引
+						唯一索引与主键索引一样，都可以防止创建重复的值。
+						但是，不同之处在于，每个数据表中只能有一个主键索引，但可以有多个唯一索引。
+						我们使用关键字UNIQUE对字段定义为唯一索引。<br>
+
+					1.4 普通索引（常规索引）
+						常规索引技术是关系数据查询中最重要的技术，
+						如果要提升数据库的性能，索引优化是首先应该考虑的，因为它能使我们的数据库得到最大性能方面的提升。
+
+						唯一任务是加快对数据的访问速度,因此，应该只为那些最经常出现在查询条件（WHERE column =）或排序条件（ORDER BY column）中的数据列创建索引。
+						只要有可能，就应该选择一个数据最整齐、最紧凑的数据列（如一个整数类型的数据列）来创建索引
+
+						常规索引也存在缺点：
+							1.多占用磁盘空间
+							2.会减慢插入，删除和修改操作
+							3.需要按照索引列上排序格式执行
+						创建索引我们可以使用INDEX和KEY关键字随表一同创建。
+
+						添加普通索引:
+							alter table t1 add index(name);<br>
+
+					1.5 全文索引
+						全文索引在MySQL中是一个FULLTEXT类型索引，但FULLTEXT索引只能用于MyISAM表，
+						并且只可以在CHAR、VARCHAR或TEXT类型的列上创建，也允许创建在一个或多个数据列上。
+						但是FULLTEXT是不支持中文全文索引的，所以我们将来会使用效率更高的全文索引引擎Sphinx。<br><br>
+
+				2 查看索引<br>
+					SHOW INDEXES FROM　表名<br><br>
+
+				3 创建索引<br>
+					3.1 建表时
+						CREATE TABEL 表名（
+							.....
+							.....
+							[UNIQUE | INDEX | KEY]  [别名] [属性名]
+						）<br>
+
+					3.2 在已存在表上创建索引
+						CREATE [UNIQUE | FULLTEXT] INDEX 索引名 ON 表名（属性名）<br>
+
+					3.3 使用ALTER语句
+						ALTER TABLE 表名 ADD [UNIQUE | FULLTEXT] INDEX 索引名 (属性名)<br><br>
+
+				4 删除索引<br>
+					DROP INDEX 索引名 ON 表名</p>           
               
            </div>
        </section>
@@ -89,6 +214,22 @@ $(document).ready(function () {
 $(window).on("scroll", function() {
     checkScrollPosition();    
 });
+
+$(function(){
+	$('#index').click(function(){
+		window.location="index.html";
+	});
+	$('#PHP').click(function(){
+		window.location="PHP.html";
+	});
+	$('#JavaScript').click(function(){
+		window.location="JavaScript.html";
+	});
+	$('#Git').click(function(){
+		window.location="Git.html";
+	});
+});
+
 </script>
 </body>
 </html>

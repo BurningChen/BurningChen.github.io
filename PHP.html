@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/templatemo-style.css">
+    <title>Mr_Chen WEB LOG</title>
+</head>
+
+<body>
+    <div class="fixed-header">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>                        
+                </button>
+                <a class="navbar-brand" href="#" id="index">Mr_Chen</a>
+            </div>
+            <nav class="main-menu">
+                <ul>
+                    <li><a href="#" id="MySQL">MySQL</a></li>
+                    <li><a href="#services" id="JavaScript">JavaScript</a></li>
+                    <li><a href="#home" id="PHP">PHP</a></li>
+                    <li><a href="#contact" id="Git">Git</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="container">
+        <section class="col-md-12 content" id="home">
+           <div class="col-lg-12 col-md-12 content-item content-item-1 background">
+               <h2 class="main-title text-center dark-blue-text">PHP</h2>
+               <p>PHP是什么：<br>PHP(Hypertext Preprocessor缩写)超级文本预处理器。<br>PHP是一种在服务器端执行的嵌入HTML文档的脚本语言。<br>PHP是目前最流行的网站开发语言（ B/S结构）。<br>PHP 独特的语法混合了 C、Java、Perl 以及 PHP 自创新的语法 。<br>支持几乎所有流行的数据库以及操作系统 </p>
+               <p>PHP变量的声明：PHP的变量声明是以$符开始的，后面跟大小写字母，数字和下划线，但不能以数字开头。可以使用函数unset( )释放指定的变量，isset( )函数检测变量是否设置，empty( )函数检查一个变量是否为空。</p>
+               <p>八大数据类型：四种标量类型： 布尔型（boolean） 、整型（integer）、浮点型（float）（浮点数，也作double） 、字符串（String）;两种复合类型： 数组（Array） 、对象Object） ;最后是两种特殊类型： 资源（Resource）、NULL</p>  
+               <p>当其他类型转换为 boolean类型 时，以下值被认为是FALSE： 布尔值 FALSE、整型值 0（零）、浮点型值 0.0（零）、空白字符串和字符串"0"、没有成员变量的数组、没有单元的对象（仅适用于 PHP 4）、特殊类型 NULL（包括尚未设定的变量）</p>
+               <p>单引号与双引号的区别：<br>单引号<br>
+                1.单引号、双引号、定界符都可以声明字符串。<br>
+                2.单引号不能解析变量和转义字符 \ (解析效 率高)<br>
+                3.单引号中不能在包含单引号。（如果有，请使用转义字符）<br>
+                4.转义字符在单引号中只能解析单引号，和转义字符本身。<br>
+             双引号<br>
+                5.双引号可以解析变量和转义字符。<br>
+                6.双引号中不能在包含双引号。（如果有，请使用转义字符）<br>
+                7.单引号中可以包含双引号，双引号中可以包含单引号。<br>
+                8.转义字符在双引号中有更多的意义。（\n \r \t 等）<br>
+                9.双引号可以解析包含在单引号中的变量，单引号也将被保留。<br>
+                10.链接一个字符串和变量,或者链接两个变量使用符号"."</p> 
+                <p>变量类型的测试函数:<br>is_bool():判断是否是布尔型<br>
+                    is_int()、is_integer()和is_long():判断是否为整型。<br>
+                    is_float()、is_double()和is_real()：判断是否为浮点型<br>
+                    is_string()：判断是否为字符串<br>
+                    is_array()：判断是否为数组<br>
+                    is_object()：判断是否为对象<br>
+                    is_resource()：判断是否为资源类型<br>
+                    is_null()：判断是否为null<br>
+                    is_scalar()：判断是否为标量<br>
+                    is_numeric()：判断是否是任何类型的数字和数字字符串<br>
+                    is_callable()：判断是否是有效的函数名<br>
+                    函数：bool settype ( mixed var, string type )是将变量 var 的类型设置成 type。</p>   
+
+                <p>PHP的字符串：<br>1. 字符串的处理介绍:<br>在C语言中字符串是作为字节数组处理的。在Java语言中字符串是作为对象处理的。而php则把字符串作为基本数据类型来处理。通常对字符串的处理涉及字符串的格式化。字符串的分割和连接、字符串的比较、以及字符串的查找、匹配和替换。<br>2. 常用的字符串格式化函数:<br>2.1 去除空格和字符串填充补函数: ltrim()、rtrim()、trim()、str_pad()<br>2.2 字符串大小写的转换<br>2.3 和HTML标签相关联的字符串格式化:nl2br、htmlspecialchars()、htmlentities()、<br>2.4 其他字符串格式化函数:strrev()、strlen()、number_format()、md5() <br> 3. 字符串操作函数: <br>3.1 字符串比较函数strcmp()、strncmp()、strcasecmp()、strnatcmp()、similar_text()<br>3.2 字符串分割与拼装： explode()、implode()、join() <br> 3.3 字符串截取:substr() <br>3.4 字符串查找、strstr()、 strchr()、strrchr()、strpos()、strrpos() <br>3.5 字符串替换:str_replace()</p>     
+              
+           </div>
+       </section>
+
+       
+
+
+</div>
+
+<div class="text-center footer">
+    <div class="container">
+        Copyright @ 2084 BurningChen
+    </div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.singlePageNav.min.js"></script>
+
+<script>
+
+// Check scroll position and add/remove background to navbar
+function checkScrollPosition() {
+    if($(window).scrollTop() > 50) {
+      $(".fixed-header").addClass("scroll");
+  } else {        
+      $(".fixed-header").removeClass("scroll");
+  }
+}
+
+$(document).ready(function () {   
+    // Single page nav
+    $('.fixed-header').singlePageNav({
+        offset: 59,
+        filter: ':not(.external)',
+        updateHash: true        
+    });
+
+    checkScrollPosition();
+
+    // nav bar
+    $('.navbar-toggle').click(function(){
+        $('.main-menu').toggleClass('show');
+    });
+
+    $('.main-menu a').click(function(){
+        $('.main-menu').removeClass('show');
+    });
+});
+
+$(window).on("scroll", function() {
+    checkScrollPosition();    
+});
+
+$(function(){
+    $('#index').click(function(){
+        window.location="index.html";
+    });
+    $('#MySQL').click(function(){
+        window.location="MySQL.html";
+    });
+    $('#JavaScript').click(function(){
+        window.location="JavaScript.html";
+    });
+    $('#Git').click(function(){
+        window.location="Git.html";
+    });
+});
+</script>
+</body>
+</html>

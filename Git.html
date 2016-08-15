@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/templatemo-style.css">
+    <title>Mr_Chen WEB LOG</title>
+</head>
+
+<body>
+    <div class="fixed-header">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>                        
+                </button>
+                <a class="navbar-brand" href="#" id="index">Mr_Chen</a>
+            </div>
+            <nav class="main-menu">
+                <ul>
+                    <li><a href="#" id="MySQL">MySQL</a></li>
+                    <li><a href="#services" id="JavaScript">JavaScript</a></li>
+                    <li><a href="#" id="PHP">PHP</a></li>
+                    <li><a href="#home" id="Git">Git</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="container">
+        <section class="col-md-12 content" id="home">
+           <div class="col-lg-12 col-md-12 content-item content-item-1 background">
+               <h2 class="main-title text-center dark-blue-text">Git</h2>
+              
+               <p></p>           
+              
+           </div>
+       </section>
+
+       
+
+
+</div>
+
+<div class="text-center footer">
+    <div class="container">
+        Copyright @ 2084 BurningChen
+    </div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.singlePageNav.min.js"></script>
+
+<script>
+
+// Check scroll position and add/remove background to navbar
+function checkScrollPosition() {
+    if($(window).scrollTop() > 50) {
+      $(".fixed-header").addClass("scroll");
+  } else {        
+      $(".fixed-header").removeClass("scroll");
+  }
+}
+
+$(document).ready(function () {   
+    // Single page nav
+    $('.fixed-header').singlePageNav({
+        offset: 59,
+        filter: ':not(.external)',
+        updateHash: true        
+    });
+
+    checkScrollPosition();
+
+    // nav bar
+    $('.navbar-toggle').click(function(){
+        $('.main-menu').toggleClass('show');
+    });
+
+    $('.main-menu a').click(function(){
+        $('.main-menu').removeClass('show');
+    });
+});
+
+$(window).on("scroll", function() {
+    checkScrollPosition();    
+});
+
+$(function(){
+    $('#index').click(function(){
+        window.location="index.html";
+    });
+    $('#MySQL').click(function(){
+        window.location="MySQL.html";
+    });
+    $('#JavaScript').click(function(){
+        window.location="JavaScript.html";
+    });
+    $('#PHP').click(function(){
+        window.location="PHP.html";
+    });
+});
+</script>
+</body>
+</html>
