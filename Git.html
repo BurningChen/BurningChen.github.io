@@ -36,7 +36,36 @@
            <div class="col-lg-12 col-md-12 content-item content-item-1 background">
                <h2 class="main-title text-center dark-blue-text">Git</h2>
               
-               <p>git手册大全</p>           
+                <p>创建Git版本库时，Git自动为我们创建了唯一一个master分支，所以，现在，git commit就是往master分支上提交更改。</p>
+
+                <p>mkdir learngit      创建空目录</p>
+                <p>cd 路径             切换到某个目录</p>
+                <p>pwd                 查看当前路径</p>
+                <p>git init            命令把这个目录变成Git可以管理的仓库</p>
+                <p>git add readme.txt  添加文件到仓库
+                <p>git add.            添加所以文件                   实际上就是把文件修改添加到暂存区；</p>
+                <p>git commit          告诉Git，把文件提交到仓库      实际上就是把暂存区的所有内容提交到当前分支。</p>
+                <p>git status          命令看看结</p>
+                <p>git diff            顾名思义就是查看difference(差异 不同)</p>
+                <p>git log             命令显示从最近到最远的提交日志 --pretty=oneline参数（规范格式）</p>
+
+                <p>在Git中，用HEAD表示当前版本，也就是最新的提交3628164...882e1e0（注意我的提交ID和你的肯定不一样），上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100。</p>
+
+                <p>git reset --hard HEAD^  回到上一个版本</p>
+                <p>git reflog              用来记录你的每一次命令</p>
+                <p>cat readme.txt          查看当前的文件</p>
+                <p>git checkout -- file(文件名)    可以丢弃工作区的修改</p>
+                <p>git checkout -b dev(分支名)               git checkout命令加上-b参数表示创建并切换</p>
+                <p>git branch dev                            创建分支</p>
+                <p>git checkout dev                          切换分支</p>
+                <p>git branch                                命令查看当前分支</p>
+                <p>git branch -d dev                         删除分支</p>
+                <p>git merge                                 命令用于合并指定分支到当前分支</p>
+
+                <p>git stash功能                             ，可以把当前工作现场“储藏”起来，等以后恢复现场后继续工作：</p>
+
+                <p>git push -u origin master                   由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。后面不需要加 -u 直接  git push origin master</p>
+           
               
            </div>
        </section>
